@@ -1,0 +1,162 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #e6f0ff); /* Light gradient background */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+.page-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #007bff; /* Blue background */
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 36px;
+}
+
+/* Product Container Styling */
+/* Product Container Styling */
+.product-container {
+    position: relative; /* For absolute positioning of the Report button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px; /* Increased max width to expand card further */
+    margin: 50px auto;
+    padding: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 20px;
+    width: 90vw;  /* Expanded to take more space on the screen */
+}
+
+
+/* Report Button Styling */
+.report-link {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.report-btn {
+    background-color: red; /* Red button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.report-btn:hover {
+    background-color: darkred;
+}
+
+/* Product Image Styling */
+.product-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Product Details */
+.product-details {
+    text-align: center;
+    width: 100%;
+}
+
+.product-name {
+    font-size: 28px;
+    color: #007bff; /* Blue text for the product name */
+    margin-bottom: 15px;
+}
+
+.product-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #28a745; /* Green for price */
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Buy Now Button Styling */
+.buy-now-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the button */
+}
+
+.buy-now-btn {
+    background-color: #28a745; /* Green button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;  /* Added space between price and button */
+}
+
+.buy-now-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+.page-footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #666;
+    font-size: 14px;
+}
+
+.page-footer p {
+    margin-top: 20px;
+}
+
+
+/* Contact Seller Button Styling */
+.contact-seller-link {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.contact-seller-btn {
+    background-color: #ff9900; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circular shape */
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-seller-btn:hover {
+    background-color: #ff7f00;
+    transform: scale(1.05);
+}
