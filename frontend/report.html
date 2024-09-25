@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Issue</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        select, textarea, input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fff;
+            transition: border 0.3s ease, background-color 0.3s ease;
+        }
+
+        select:focus, textarea:focus, input[type="file"]:focus {
+            border-color: #ff6b6b;
+            background-color: #ffe3e3;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        input[type="file"] {
+            border: none;
+        }
+
+        /* Dynamic Red Button */
+        .report-button {
+            background: linear-gradient(135deg, #f85032 0%, #e73827 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 6px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .report-button:hover {
+            background: linear-gradient(135deg, #e73827 0%, #d7263b 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .report-button:active {
+            background: linear-gradient(135deg, #d7263b 0%, #c21807 100%);
+            box-shadow: 0 4px rgba(0, 0, 0, 0.15);
+            transform: translateY(2px);
+        }
+
+        /* Preview Image Styling */
+        .image-preview {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #ff6b6b;
+            border-radius: 12px;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-preview.show {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Footer Text */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Report an Issue</h1>
+        <p class="description">Please provide the details of the issue and upload a photo. Your feedback helps improve our community!</p>
+
+        <form action="/submit-report" method="POST" enctype="multipart/form-data">
+            <!-- Reason Selection -->
+            <label for="report-reason">Reason for Reporting:</label>
+            <select id="report-reason" name="reason" required>
+                <option value="">Select a reason</option>
+                <option value="spam">Spam</option>
+                <option value="harassment">Harassment</option>
+                <option value="inappropriate">Inappropriate Content</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- Details Input -->
+            <label for="report-details">Details:</label>
+            <textarea id="report-details" name="details" placeholder="Provide more details about the issue..." required></textarea>
+
+            <!-- Photo Upload with Preview -->
+            <label for="report-photo">Upload a Photo (Required):</label>
+            <input type="file" id="report-photo" name="photo" accept="image/*" required onchange="previewImage(event)">
+
+            <!-- Image Preview -->
+            <img id="image-preview" class="image-preview" alt="Image preview will appear here">
+
+            <!-- Submit Button -->
+            <button type="submit" class="report-button">Report</button>
+        </form>
+
+        <p class="footer">Your report will help us improve our community. Thank you!</p>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            const preview = document.getElementById('image-preview');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.add('show');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>

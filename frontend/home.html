@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Homepage</title>
+  <link rel="stylesheet" href="home.css">   
+</head>
+<body>
+  <!-- Navigation Buttons: Home and Rental -->
+  <div class="nav-buttons">
+    <a href="home.html">Home</a>
+    <a href="rental.html">Rental</a>
+  </div>
+
+  <!-- Top right clickable circular photo -->
+  <a href="profile.html" class="logo-link">
+    <img src="user.jfif" alt="Logo" class="logo">
+  </a>
+
+  <!-- Tabs for Utilities, Electronics, Snacks -->
+  <div class="tabs">
+    <button class="tab-link active" onclick="openTab(event, 'utilities')">Utilities</button>
+    <button class="tab-link" onclick="openTab(event, 'electronics')">Electronics</button>
+    <button class="tab-link" onclick="openTab(event, 'snacks')">Snacks</button>
+  </div>
+
+  <!-- Tab Content - Utilities -->
+  <div id="utilities" class="tab-content">
+    <div class="card-list">
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="utility1.jpg" alt="Utility 1" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Utility Product 1</h3>
+          <p>Short description of Utility Product 1.</p>
+          <span class="price">$100</span>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="utility2.jpg" alt="Utility 2" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Utility Product 2</h3>
+          <p>Short description of Utility Product 2.</p>
+          <span class="price">$150</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content - Electronics -->
+  <div id="electronics" class="tab-content" style="display: none;">
+    <div class="card-list">
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="electronic1.jpg" alt="Electronic 1" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Electronic Product 1</h3>
+          <p>Short description of Electronic Product 1.</p>
+          <span class="price">$300</span>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="electronic2.jpg" alt="Electronic 2" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Electronic Product 2</h3>
+          <p>Short description of Electronic Product 2.</p>
+          <span class="price">$350</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content - Snacks -->
+  <div id="snacks" class="tab-content" style="display: none;">
+    <div class="card-list">
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="snack1.jpg" alt="Snack 1" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Snack Product 1</h3>
+          <p>Short description of Snack Product 1.</p>
+          <span class="price">$10</span>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="snack2.jpg" alt="Snack 2" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Snack Product 2</h3>
+          <p>Short description of Snack Product 2.</p>
+          <span class="price">$15</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Button -->
+  <a href="main.html" class="floating-btn">Sell or Rent</a>
+
+  <script src="home.js"></script>
+</body>
+</html>

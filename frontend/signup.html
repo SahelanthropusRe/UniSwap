@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .filled {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>
+        function sendOtp() {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const validDomain = "@vitstudent.ac.in";
+
+            if (!emailPattern.test(email) || !email.endsWith(validDomain)) {
+                alert('Please enter a valid email address ending with @vitstudent.ac.in.');
+                return false;
+            }
+
+            // Insert server-side OTP sending logic here
+            alert('OTP has been sent to your email address.'); // Message to notify OTP is sent
+        }
+
+        function validateForm(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const username = document.getElementById('username').value;
+            const regNumber = document.getElementById('regNumber').value;
+            const phone = document.getElementById('phone').value;
+            const otp = document.getElementById('otp').value;
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phonePattern = /^[0-9]{10}$/;
+            const validDomain = "@vitstudent.ac.in";
+
+            if (!email || !password || !username || !regNumber || !phone || !otp) {
+                alert('All fields are required.');
+                return false;
+            }
+
+            if (!emailPattern.test(email) || !email.endsWith(validDomain)) {
+                alert('Enter your vit student mail id');
+                return false;
+            }
+
+            if (!phonePattern.test(phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            // Insert server-side OTP verification logic here
+            alert('Registration successful!');
+            return true;
+        }
+
+        function handleInput(event) {
+            if (event.target.value) {
+                event.target.classList.add('filled');
+            } else {
+                event.target.classList.remove('filled');
+            }
+        }
+    </script>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-white bg-opacity-10 p-8 rounded-lg shadow-lg backdrop-blur-md w-96 shadow-2xl">
+        <h2 class="text-3xl font-bold text-center text-white mb-8">Sign Up</h2>
+        <form onsubmit="validateForm(event)">
+            <div class="relative mb-4">
+                <input type="text" id="username" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Username" oninput="handleInput(event)">
+                <i class="fas fa-user absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="email" id="email" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Email (must end with @vitstudent.ac.in)" oninput="handleInput(event)">
+                <i class="fas fa-envelope absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="password" id="password" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Password" oninput="handleInput(event)">
+                <i class="fas fa-lock absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="text" id="regNumber" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Registration Number" oninput="handleInput(event)">
+                <i class="fas fa-id-card absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="text" id="phone" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Phone Number" oninput="handleInput(event)">
+                <i class="fas fa-phone absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <div class="relative mb-4">
+                <input type="text" id="otp" class="w-full p-4 pl-10 text-white bg-transparent border border-white rounded-full focus:outline-none" placeholder="Enter OTP" oninput="handleInput(event)">
+                <i class="fas fa-key absolute left-4 top-1/2 transform -translate-y-1/2 text-white"></i>
+            </div>
+            <button type="button" class="w-full p-4 text-lg font-bold text-purple-900 bg-white rounded-full mb-4" onclick="sendOtp()">Generate OTP</button>
+            <button type="submit" class="w-full p-4 text-lg font-bold text-purple-900 bg-white rounded-full">Register</button>
+        </form>
+        <p class="mt-4 text-center text-white">Already have an account? 
+            <a href="login.html" class="font-bold text-white">Login</a>
+        </p>
+    </div>
+</body>
+</html>

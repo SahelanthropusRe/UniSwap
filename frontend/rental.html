@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Homepage</title>
+  <link rel="stylesheet" href="rental.css">
+</head>
+<body>
+  <!-- Top right clickable circular photo -->
+  <a href="profile.html" class="logo-link">
+    <img src="user.jfif" alt="Logo" class="logo">
+  </a>
+
+  <!-- Navigation Buttons for Home and Rental -->
+  <div class="nav-buttons">
+    <a href="home.html">Home</a>
+    <a href="rental.html" class="active">Rental</a>
+  </div>
+
+  <!-- Tabs for Utilities, Electronics -->
+  <div class="tabs">
+    <button class="tab-link active" onclick="openTab(event, 'utilities')">Utilities</button>
+    <button class="tab-link" onclick="openTab(event, 'electronics')">Electronics</button>
+  </div>
+
+  <!-- Tab Content - Utilities -->
+  <div id="utilities" class="tab-content active">
+    <div class="card-list">
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="utility1.jpg" alt="Utility 1" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Utility Product 1</h3>
+          <p>Short description of Utility Product 1.</p>
+          <span class="price">$100</span>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="utility2.jpg" alt="Utility 2" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Utility Product 2</h3>
+          <p>Short description of Utility Product 2.</p>
+          <span class="price">$150</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab Content - Electronics -->
+  <div id="electronics" class="tab-content" style="display: none;">
+    <div class="card-list">
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="electronic1.jpg" alt="Electronic 1" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Electronic Product 1</h3>
+          <p>Short description of Electronic Product 1.</p>
+          <span class="price">$300</span>
+        </div>
+      </div>
+      <div class="card" onclick="redirectToProductPage()">
+        <img src="electronic2.jpg" alt="Electronic 2" class="card-img">
+        <a href="report.html" class="report-btn">Report</a>
+        <div class="card-details">
+          <h3>Electronic Product 2</h3>
+          <p>Short description of Electronic Product 2.</p>
+          <span class="price">$350</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Button -->
+  <a href="https://example.com/sell-or-rent" class="floating-btn">Sell or Rent</a>
+
+  <script src="rental.js"></script>
+</body>
+</html>

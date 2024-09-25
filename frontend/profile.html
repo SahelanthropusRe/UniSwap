@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="left-section">
+            <div class="profile-card">
+                <div class="image-upload-wrapper">
+                    <img src="user.jfif" alt="User Image" class="profile-image" id="userImage">
+                    <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                    <label for="imageUpload" class="upload-label">Upload Image</label>
+                </div>
+                <h2>Student</h2> <!-- Changed to "Student" -->
+            </div>
+        </div>
+        <div class="right-section">
+            <form class="user-profile-form">
+                <h3>User Information</h3>
+                <div class="form-group">
+                    <label for="userName">Full Name:</label>
+                    <input type="text" id="userName" name="userName" value="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="userReg">Registration Number:</label>
+                    <input type="text" id="userReg" name="userReg" value="">
+                </div>
+                <div class="form-group">
+                    <label for="userBlock">Block Code:</label>
+                    <input type="text" id="userBlock" name="userBlock" value="MHA for A Men's / LHA for A Ladie's Hostel">
+                </div>
+                <button type="submit" class="submit-btn">Save Profile</button>
+            </form>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>
